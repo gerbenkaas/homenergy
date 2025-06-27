@@ -4,7 +4,9 @@ This hobby project provides Python scripts that can be used to read the data fro
 ## Prerequisites
 - Python 3, install sqlalchemy, fastapi, ...
 - MySQL database
-- optional API key for SolarEdge
+- HomeWizard P1 Meter
+- HomeWizard Watermeter
+- API key for SolarEdge Cloud-Based Monitoring Platform.
 
 ## Webapp
 The front end is created with Bootstrap and Chart.js.
