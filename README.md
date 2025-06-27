@@ -6,7 +6,7 @@ This hobby project provides Python scripts that can be used to read the data fro
 - MySQL database
 - HomeWizard P1 Meter
 - HomeWizard Watermeter
-- API key for SolarEdge Cloud-Based Monitoring Platform.
+- API key for SolarEdge Cloud-Based Monitoring Platform
 
 ## Webapp
 The front end is created with Bootstrap and Chart.js.
