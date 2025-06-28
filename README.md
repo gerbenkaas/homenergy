@@ -60,7 +60,8 @@ cd /path/to/this/project/webapp
 ```
 
 ### Web application
-Visit the web application in your browser by navigationg to http://[frontend_ip]:8080.
+First, modify <code>webapp/frontend/js/script.js</code>: change the tariffs and the IP address of the backend (see fetchData function).
+Next, visit the web application in your browser by navigationg to http://[frontend_ip]:8080.
 
 ## Todo
 Some ideas for further development...
