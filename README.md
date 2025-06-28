@@ -42,9 +42,8 @@ For the HomeWizard devices, the SolarEdge Cloud-Monitoring and the weather forec
 - <code>homewizard.py</code>: run every minute
 - <code>solar_edge.py</code>: run every 15 minutes
 - <code>weather.py</code>: run once a day, somewhere after midnight for example.
-Or, modify the scripts so that they acquire data at the interval you require.
 
-Next, follow the steps below (Unix):
+Or, modify the scripts so that they acquire data at the interval you require. Next, follow the steps below (Unix):
 
 ```bash
 cd /path/to/this/project/webapp/backend
