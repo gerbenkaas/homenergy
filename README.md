@@ -1,5 +1,5 @@
 # homenergy
-This is a hobby project provides Python scripts that can be used to read the data from the HomeWizard P1 Meter, the HomeWizard Watermeter, the SolarEdge Cloud-Based Monitoring Platform and open-meteo.com (for a weather forecast). The retreived data is stored to a mysql database.
+This is a hobby project provides Python scripts that can be used to read the data from the HomeWizard P1 Meter, the HomeWizard Watermeter, the SolarEdge Cloud-Based Monitoring Platform and open-meteo.com (for a weather forecast). The retreived data is stored to a mysql database and presented in a web application.
 
 ## Prerequisites
 - Python 3, required packages: sqlalchemy, fastapi, requests, mysql.connector 
