@@ -12,6 +12,7 @@ This is a hobby project provides Python scripts that can be used to read the dat
 The front end is created with Bootstrap and Chart.js.
 
 ## Usage
+Delete code you will not need...
 
 ### Connect HomeWizard devices
 Setup the HomeWizard devices, add them to your network. 
