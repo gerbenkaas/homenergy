@@ -60,7 +60,7 @@ cd /path/to/this/project/webapp
 ```
 
 ### Web application
-Visit the web application in your browser by navigationg to https://[frontend_ip]:8080.
+Visit the web application in your browser by navigationg to http://[frontend_ip]:8080.
 
 ## Todo
 Some ideas for further development...
