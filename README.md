@@ -31,14 +31,14 @@ EXIT;
 ### Install Python
 Install Python (3.x). Next:
 
-Modify <code>webapp/backend/settings.py</code> and enter your settings for the HomeWizard devices, your Solar Edge API information, the database configuration and the IP address of the host of the frontend. You should now be able to run the scripts below:
+Modify <code>webapp/backend/settings.py</code> and enter your settings for the HomeWizard devices, your Solar Edge API information, the database configuration and the IP address of the host of the frontend. The are no settings for the weather forecast script, but you may want to change the location (lattitude and longitude) in <code>weather.py</code>. You should now be able to run the scripts below:
 ```bash
 python -m homewizard.py
 python -m solar_edge.py
 python -m weather.py
 ```
 
-For the HomeWizard devices, the SolarEdge Cloud-Monitoring and the weather forecast seperate scripts are available in the root folder. These script acquire data <strong>only once</strong>. Add them to a task scheduler to execute the scripts at configered intervals, for example: 
+These script acquire data <strong>only once</strong>. Add them to a task scheduler to execute the scripts at configered intervals, for example: 
 - <code>homewizard.py</code>: run every minute
 - <code>solar_edge.py</code>: run every 15 minutes
 - <code>weather.py</code>: run once a day, somewhere after midnight for example.
