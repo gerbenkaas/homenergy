@@ -1,0 +1,17 @@
+h1 {
+  padding: 16px 0px 12px 0px;
+}
+
+h2 {
+  padding: 12px 0px 8px 0px;
+}
+
+.container .row {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+footer {
+  margin-top: 24px;
+  padding: 16px 0px;
+}

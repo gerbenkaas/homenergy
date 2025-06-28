@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Energy Consumption</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>
+<body>
+    <div class="container">
+    <h1>Home Energy Consumption</h1>
+    <p class="lead"><strong>Last Update:</strong> <span id="lastTimestamp"></span></p>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2><i class="bi bi-house-gear"></i> Today</h2>
+                <p><strong>Current Tariff:</strong> <span id="activeTariff"></span></p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"><i class="bi bi-arrow-down"></i> T1</th>
+                            <th scope="col"><i class="bi bi-arrow-down"></i> T2</th>
+                            <th scope="col"><i class="bi bi-arrow-up"></i> T1</th>
+                            <th scope="col"><i class="bi bi-arrow-up"></i> T2</th>
+                            <th scope="col"><i class="bi bi-fire"></i></th>
+                            <th scope="col"><i class="bi bi-droplet"></i></th>
+                            <th scope="col"><i class="bi bi-sun"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <th scope="row"><i class="bi bi-lightning"></i></th>
+                              <td>-</td>
+                              <td>-</td>
+                              <td><span id="pwrExportT1"></span></td>
+                              <td><span id="pwrExportT2"></span></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td><span id="todaySolar"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-house-down"></i></th>
+                              <td><span id="pwrImportT1"></span></td>
+                              <td><span id="pwrImportT2"></span></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td><span id="todayGas"></span> m<sup>3</sup></td>
+                              <td><span id="todayWater"></span> l</td>
+                              <td><span id="usageSolar"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-cash-coin"></i></th>
+                              <td>&euro;<span id="pwrImportT1Cost"></span></td>
+                              <td>&euro;<span id="pwrImportT2Cost"></span></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>&euro;<span id="todayGasCost"></span></td>
+                              <td>&euro;<span id="todayWaterCost"></span></td>
+                              <td>-</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-piggy-bank"></i></th>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>&euro;<span id="pwrExportT1Rev"></span></td>
+                              <td>&euro;<span id="pwrExportT2Rev"></span></td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2><i class="bi bi-thermometer-sun"></i> Weather Forecast</h2>
+                <p><strong>Helmond, KNMI</strong> from <a href="https://open-meteo.com" target="_blank">open-meteo.com</a></p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                            <th scope="col">#</th>
+                            <th scope="col"><span id="forecastDay1"></span></th>
+                            <th scope="col"><span id="forecastDay2"></span></th>
+                            <th scope="col"><span id="forecastDay3"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <th scope="row"><i class="bi bi-thermometer"></i> - <i class="bi bi-thermometer-high"></i></th>
+                              <td><span id="forecastTmin1"></span> - <span id="forecastTmax1"></span> &deg;C</td>
+                              <td><span id="forecastTmin2"></span> - <span id="forecastTmax2"></span> &deg;C</td>
+                              <td><span id="forecastTmin3"></span> - <span id="forecastTmax3"></span> &deg;C</td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-sunrise"> - <i class="bi bi-sunset"></i></i></th>
+                              <td><span id="forecastSunrise1"></span> - <span id="forecastSunset1"></span></td>
+                              <td><span id="forecastSunrise2"></span> - <span id="forecastSunset2"></span></td>
+                              <td><span id="forecastSunrise3"></span> - <span id="forecastSunset3"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-brightness-high"></i></th>
+                              <td><span id="forecastSunshine1"></span></td>
+                              <td><span id="forecastSunshine2"></span></td>
+                              <td><span id="forecastSunshine3"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-cloud-sun"></i></th>
+                              <td><span id="forecastCode1"></span></td>
+                              <td><span id="forecastCode2"></span></td>
+                              <td><span id="forecastCode3"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h2><i class="bi bi-lightning"></i> Power Consumption</h2>
+                <p><strong><i class="bi bi-activity"></i> Current Power:</strong> <span id="activePower"></span></p>
+                <canvas id="powerChart" width="300" height="200"></canvas>
+            </div>
+            <div class="col-lg-6">
+                <h2><i class="bi bi-sun"></i> Power Production</h2>
+                <p><strong><i class="bi bi-activity"></i> Current Power:</strong> <span id="activeSolar"></span></p>
+                <canvas id="solarChart" width="300" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2><i class="bi bi-fire"></i> Gas Consumption</h2>
+                <p><strong><i class="bi bi-activity"></i> Current Gas Usage:</strong> N/A</p>
+                <canvas id="gasChart" width="300" height="200"></canvas>
+            </div>
+            <div class="col-lg-6">
+                <h2><i class="bi bi-droplet"></i> Water Consumption</h2>
+                <p><strong><i class="bi bi-activity"></i> Current Water Usage:</strong> <span id="activeWater"></span></p>
+                <canvas id="waterChart" width="300" height="200"></canvas>
+           </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="text-center"><p>Home Energy Consumption</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
