@@ -67,7 +67,8 @@ Next, visit the web application in your browser by navigationg to http://[fronte
 Some ideas for further development...
 - General improvements
 - Graph data dessimation
-- Daily / Monthly summaries
+- Daily / monthly summaries, although not really interested.
+- ...
 
 ## Disclaimer
 This project is currently under development. While I strive to provide a functional and reliable application, please be aware that it may contain bugs or incomplete features. Support is not provided, and by using this software, you acknowledge that you do so at your own risk. The developer is not liable for any issues that may arise from the use of this application.
