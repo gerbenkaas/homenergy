@@ -4,15 +4,15 @@ This is a hobby project provides Python scripts that can be used to read the dat
 ## Prerequisites
 - Python 3, required packages: sqlalchemy, fastapi, requests, mysql.connector 
 - MySQL database
-- HomeWizard P1 Meter
-- HomeWizard Watermeter
+- HomeWizard P1 Meter (v1.x firmware)
+- HomeWizard Watermeter (v1.x firmware)
 - API key for SolarEdge Cloud-Based Monitoring Platform
 
 ## Webapp
 The front end is created with Bootstrap and Chart.js.
 
 ## Usage
-Delete code you will not need...
+<strong>You probably cannot use this code as is, it's important to adapt the code to your use case...</strong>
 
 ### Connect HomeWizard devices
 Setup the HomeWizard devices, add them to your network. 
