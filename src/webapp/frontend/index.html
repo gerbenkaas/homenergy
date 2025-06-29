@@ -24,10 +24,8 @@
                         <thead>
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col"><i class="bi bi-arrow-down"></i> T1</th>
-                            <th scope="col"><i class="bi bi-arrow-down"></i> T2</th>
-                            <th scope="col"><i class="bi bi-arrow-up"></i> T1</th>
-                            <th scope="col"><i class="bi bi-arrow-up"></i> T2</th>
+                            <th scope="col"><i class="bi bi-lightning-charge"></i> T1</th>
+                            <th scope="col"><i class="bi bi-lightning-charge"></i> T2</th>
                             <th scope="col"><i class="bi bi-fire"></i></th>
                             <th scope="col"><i class="bi bi-droplet"></i></th>
                             <th scope="col"><i class="bi bi-sun"></i></th>
@@ -35,9 +33,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                              <th scope="row"><i class="bi bi-lightning"></i></th>
-                              <td>-</td>
-                              <td>-</td>
+                              <th scope="row"><i class="bi bi-arrow-down"></i></th>
+                              <td><span id="pwrImportT1"></span></td>
+                              <td><span id="pwrImportT2"></span></td>
+                              <td><span id="todayGas"></span> m<sup>3</sup></td>
+                              <td><span id="todayWater"></span> l</td>
+                              <td><span id="usageSolar"></span></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"><i class="bi bi-arrow-up"></i></th>
                               <td><span id="pwrExportT1"></span></td>
                               <td><span id="pwrExportT2"></span></td>
                               <td>-</td>
@@ -45,29 +49,15 @@
                               <td><span id="todaySolar"></span></td>
                             </tr>
                             <tr>
-                              <th scope="row"><i class="bi bi-house-down"></i></th>
-                              <td><span id="pwrImportT1"></span></td>
-                              <td><span id="pwrImportT2"></span></td>
-                              <td>-</td>
-                              <td>-</td>
-                              <td><span id="todayGas"></span> m<sup>3</sup></td>
-                              <td><span id="todayWater"></span> l</td>
-                              <td><span id="usageSolar"></span></td>
-                            </tr>
-                            <tr>
                               <th scope="row"><i class="bi bi-cash-coin"></i></th>
                               <td>&euro;<span id="pwrImportT1Cost"></span></td>
                               <td>&euro;<span id="pwrImportT2Cost"></span></td>
-                              <td>-</td>
-                              <td>-</td>
                               <td>&euro;<span id="todayGasCost"></span></td>
                               <td>&euro;<span id="todayWaterCost"></span></td>
                               <td>-</td>
                             </tr>
                             <tr>
                               <th scope="row"><i class="bi bi-piggy-bank"></i></th>
-                              <td>-</td>
-                              <td>-</td>
                               <td>&euro;<span id="pwrExportT1Rev"></span></td>
                               <td>&euro;<span id="pwrExportT2Rev"></span></td>
                               <td>-</td>

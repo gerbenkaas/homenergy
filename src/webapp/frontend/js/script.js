@@ -1,17 +1,51 @@
 let pwrChart, gasChart, waterChart, solarChart; // Global variables to hold chart instances
 
-var tariffWater = 1.5;
-var tariffGas = 0.6;
+const weatherCodeMap = {
+    0: { text: "Clear sky", icon: "bi-sun" },
+    1: { text: "Mainly clear", icon: "bi-sun" },
+    2: { text: "Partly cloudy", icon: "bi-cloud-sun" },
+    3: { text: "Overcast", icon: "bi-cloud" },
+    45: { text: "Fog", icon: "bi-cloud-fog" },
+    48: { text: "Rime fog", icon: "bi-cloud-fog" },
+    51: { text: "Light drizzle", icon: "bi-cloud-drizzle" },
+    53: { text: "Moderate drizzle", icon: "bi-cloud-drizzle" },
+    55: { text: "Heavy drizzle", icon: "bi-cloud-drizzle" },
+    56: { text: "Freezing drizzle", icon: "bi-cloud-drizzle" },
+    57: { text: "Dense freezing drizzle", icon: "bi-cloud-drizzle" },
+    61: { text: "Light rain", icon: "bi-cloud-rain" },
+    63: { text: "Moderate rain", icon: "bi-cloud-rain" },
+    65: { text: "Heavy rain", icon: "bi-cloud-rain-heavy" },
+    66: { text: "Freezing rain", icon: "bi-cloud-rain" },
+    67: { text: "Heavy freezing rain", icon: "bi-cloud-rain-heavy" },
+    71: { text: "Light snow", icon: "bi-cloud-snow" },
+    73: { text: "Moderate snow", icon: "bi-cloud-snow" },
+    75: { text: "Heavy snow", icon: "bi-cloud-snow" },
+    77: { text: "Snow grains", icon: "bi-cloud-snow" },
+    80: { text: "Light showers", icon: "bi-cloud-drizzle" },
+    81: { text: "Moderate showers", icon: "bi-cloud-rain" },
+    82: { text: "Violent showers", icon: "bi-cloud-rain-heavy" },
+    85: { text: "Light snow showers", icon: "bi-cloud-snow" },
+    86: { text: "Heavy snow showers", icon: "bi-cloud-snow" },
+    95: { text: "Thunderstorm", icon: "bi-cloud-lightning" },
+    96: { text: "Thunderstorm with hail", icon: "bi-cloud-lightning-rain" },
+    99: { text: "Severe thunderstorm with hail", icon: "bi-cloud-lightning-rain" }
+};
+
+var tariffWater = 1.0;
+var tariffGas = 0.5;
 var tariffImpT1 = 0.1;
 var tariffImpT2 = 0.15;
 var tariffExpT1 = 0.1;
 var tariffExpT2 = 0.15;
 
 async function fetchData() {
-    // change backend url below 
     const response = await fetch('http://192.168.1.3:8000/api/data');
     const data = await response.json();
     return data;
+}
+
+function getWeatherInfo(code) {
+    return weatherCodeMap[code] || { text: "Unknown", icon: "bi-question-circle" };
 }
 
 function createPowerChart(powerData) {
@@ -328,7 +362,9 @@ function updateCharts() {
                 document.getElementById(`forecastSunrise${(i + 1)}`).innerText = weather_forecast.sunrise.slice(11, 16);
                 document.getElementById(`forecastSunset${(i + 1)}`).innerText = weather_forecast.sunset.slice(11, 16);
                 document.getElementById(`forecastSunshine${(i + 1)}`).innerText = `${(weather_forecast.sunshine_duration / 3600).toFixed(1)} hrs`;
-                document.getElementById(`forecastCode${(i + 1)}`).innerText = weather_forecast.weather_code;
+                const weatherCode = getWeatherInfo(weather_forecast.weather_code);
+                const weatherIcon = `<i class="bi ${weatherCode.icon}"></i>`;
+                document.getElementById(`forecastCode${(i + 1)}`).innerHTML = weatherIcon;
             }
         }
         
