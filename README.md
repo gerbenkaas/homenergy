@@ -67,7 +67,8 @@ Next, visit the web application in your browser by navigationg to http://[fronte
 Some ideas for further development...
 - General improvements
 - Graph data dessimation
-- Daily / monthly summaries, although not really interested.
+- Daily / monthly summaries (perhaps)
+- Current temperature?
 - ...
 
 ## Disclaimer
