@@ -38,7 +38,7 @@ python -m solar_edge.py
 python -m weather.py
 ```
 
-These script acquire data <strong>only once</strong>. Add them to a task scheduler to execute the scripts at configered intervals, for example: 
+These scripts acquire data <strong>only once</strong>. Add them to a task scheduler to execute the scripts at configered intervals, for example: 
 - <code>homewizard.py</code>: run every minute
 - <code>solar_edge.py</code>: run every 15 minutes
 - <code>weather.py</code>: run once a day, somewhere after midnight for example.
