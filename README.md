@@ -66,7 +66,7 @@ Next, visit the web application in your browser by navigationg to http://[fronte
 ## Todo
 Some ideas for further development...
 - General improvements
-- Graph data dessimation
+- Graph data decimation
 - Daily / monthly summaries (perhaps)
 - Current temperature?
 - ...
